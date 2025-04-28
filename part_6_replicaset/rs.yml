@@ -1,0 +1,37 @@
+# apiVersion: apps/v1
+# kind: ReplicaSet
+# metadata:
+#   name: webserver-replicset
+# spec:
+#   replicas: 5
+#   selector:
+#     matchLabels:
+#       app: webserver
+#   template:
+#     metadata:
+#       labels:
+#         app: webserver #so that this pod match with above selector webserver
+#     spec:
+#       containers:
+#         - name: nginx-container
+#           image: nginx
+
+
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webserver-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webserver 
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+      - name: nginx-container
+        image: httpd

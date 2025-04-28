@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-deployment
+  labels:
+    name: myapp
+spec:
+  nodeSelector:
+    size: medium
+  containers:
+  - name: myapp
+    image: nginx     

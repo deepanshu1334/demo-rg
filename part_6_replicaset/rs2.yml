@@ -1,0 +1,36 @@
+# apiVersion: apps/v1
+# kind: ReplicaSet
+# metadata:
+#   name: webserver-replicaset
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: webserver 
+#   template:
+#     metadata:
+#       labels:
+#         app: webserver
+#     spec:
+#       containers:
+#       - name: nginx-container
+#         image: httpd
+
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webserver-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webserver1 
+  template:
+    metadata:
+      labels:
+        app: webserver1 #this pod match with this selctor and rs use selector ot mange pod
+    spec:
+      containers:
+      - name: nginx-container
+        image: httpd

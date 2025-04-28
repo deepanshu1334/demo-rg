@@ -1,0 +1,32 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: new-ping-pod
+#   labels:
+#     name: myapp
+# spec:
+#   containers:
+#   - name: ping-container
+#     image: busybox
+#     command:
+#     - "ping"
+#     - "-c"
+#     - "5" # pod in crash loop back states - starting and crashing again at same time due to 5 times 
+#     - "google.com"
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: new-ping-pod
+  labels:
+    name: myapp
+spec:
+  containers:
+  - name: ping-container
+    image: busybox
+    command:
+    - "ping"
+    - "-c"
+    - "30"
+    - "google.com"

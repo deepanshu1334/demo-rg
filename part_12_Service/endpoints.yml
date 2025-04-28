@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: demo-service 
+subsets:
+  - addresses:
+      - ip: 10.1.0.164  # IP address of backend pod
+    ports:
+      - port: 80

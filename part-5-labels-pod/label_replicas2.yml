@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replica-set
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: front
+  template:
+    metadata:
+      labels:
+        tier: front
+    spec:
+      containers:
+        - name: phps-redis
+          image: nginx  # Removed extra text after "nginx"
